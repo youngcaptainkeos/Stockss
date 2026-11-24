@@ -1,0 +1,16 @@
+{
+  "method": "Interactive checks in the local browser",
+  "passed": [
+    "Actual artifact loads into the dark replay terminal",
+    "Next-session control advances the session and date",
+    "Instrument selector updates candles and current values",
+    "Playback at 10x advances sessions and pause stops it",
+    "Date seeking reaches the final session",
+    "Cash strategy shows unchanged starting capital and no fills",
+    "Evaluation page shows matching frozen-model results, costs and uncertainty"
+  ],
+  "limits": [
+    "No live broker integration exists",
+    "Responsive CSS is supplied; exhaustive mobile-device testing was not performed"
+  ]
+}

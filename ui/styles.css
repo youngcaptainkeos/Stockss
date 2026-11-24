@@ -2,3 +2,5 @@
 
 /* Keep controls and task-critical values readable at desktop and mobile sizes. */
 .toolbar label,.eyebrow,.small-label,.badge,.brand-sub,.experiment-tag>span{font-size:.75rem}.watch-row span:first-child,.watch-row span:last-child,.signal-values,.signal-box>p:not(.eyebrow),.criterion,.stress p{font-size:.875rem}.transport button,.transport select,#dateSeek,.toolbar-end strong,table{font-size:.875rem}.kpis article>span{font-size:.875rem}.kpis small,.chart-foot,.ohlc,.legend,th,.signal-box small,.watch-row small,.scrub div,footer,.selected-badge,.chart-unit,.timezone{font-size:.75rem}.trade-side,.chosen{font-size:.7rem}.signal-box{padding-bottom:18px}
+@media(max-width:1100px){.scrub{flex-basis:100%;order:3}.scrub div{gap:12px}}
+@media(min-width:761px) and (max-width:900px){.chart-layout{grid-template-columns:1fr}.watch-panel{display:grid;grid-template-columns:1fr 1fr}.watch-panel .panel-top{grid-column:1/-1}.watch-panel #watchlist{grid-column:1}.watch-panel .signal-box{grid-column:2;grid-row:2}.canvas-wrap{height:340px}}
