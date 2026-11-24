@@ -113,20 +113,92 @@ function render() {
   $('asof').textContent = new Date(date + 'T12:00:00').toLocaleDateString('en-IN', {day: '2-digit', month: 'short', year: 'numeric'}).toUpperCase();
   $('dateSeek').value = date; $('timeline').value = state.cursor;
   $('sessionCount').textContent = `SESSION ${state.cursor + 1} / ${dates().length}`;
-  $('equity').textContent = money(row.equity); $('return').textContent = pct(row.equity / initial - 1, true);
-  colorValue($('return'), row.equity - initial); $('netPnl').textContent = `${money(row.equity - initial)} net P&L`;
-  $('costs').textContent = money(row.costs); $('slippage').textContent = `+ ${money(row.slippage)} adverse slippage`;
-  $('drawdown').textContent = pct(row.drawdown); colorValue($('drawdown'), row.drawdown);
-  $('exposure').textContent = pct(row.exposure); $('positions').textContent = `${row.positions} positions · ${row.halted ? 'Risk halt active' : 'Long / cash'}`;
+
+  // 1. Overall Portfolio metrics (explicitly labeled)
+  $('equity').textContent = money(row.equity);
+  $('return').textContent = pct(row.equity / initial - 1, true);
+  colorValue($('return'), row.equity - initial);
+  $('netPnl').textContent = `${money(row.equity - initial)} portfolio net P&L`;
+
+  // 2. Selected stock specific metrics (updates immediately on symbol change or replay step)
+  $('stockKpiTitle').textContent = `${state.symbol} strategy P&L`;
+  $('stockMoveTitle').textContent = `${state.symbol} price (2025)`;
+
+  const symbolTrades = s.trades.filter(t => t.symbol === state.symbol && t.date <= date);
+  const closedSymbolTrades = symbolTrades.filter(t => t.side === 'SELL' && t.pnl != null);
+  const realizedPnl = closedSymbolTrades.reduce((acc, t) => acc + t.pnl, 0);
+
+  // Position calculation for state.symbol
+  let heldQty = 0;
+  let heldCost = 0;
+  symbolTrades.forEach(t => {
+    if (t.side === 'BUY') {
+      heldQty += t.quantity;
+      heldCost += t.notional + t.fees;
+    } else if (t.side === 'SELL') {
+      const avgCost = heldQty > 0 ? heldCost / heldQty : 0;
+      heldCost -= t.quantity * avgCost;
+      heldQty -= t.quantity;
+    }
+  });
+
+  const candles = state.data.candles[state.symbol] || [];
+  const visibleCandles = candles.filter(x => x.date <= date);
+  const bar = visibleCandles.at(-1);
+  const firstBar = candles[0];
+
+  let unrealizedPnl = 0;
+  if (heldQty > 0 && bar && bar.close) {
+    const avgPx = heldCost / heldQty;
+    unrealizedPnl = heldQty * (bar.close - avgPx);
+  }
+  const totalStockPnl = realizedPnl + unrealizedPnl;
+
+  $('stockPnl').textContent = money(totalStockPnl);
+  colorValue($('stockPnl'), totalStockPnl);
+
+  const winCount = closedSymbolTrades.filter(t => t.pnl > 0).length;
+  const winRateText = closedSymbolTrades.length ? ` · ${(winCount / closedSymbolTrades.length * 100).toFixed(0)}% win rate` : '';
+  const posText = heldQty > 0 ? ` · Holding ${number(heldQty, 0)} sh` : ' · Flat';
+  $('stockPnlSub').textContent = `${closedSymbolTrades.length} trades${winRateText}${posText}`;
+
+  // Stock Market YTD return (Price action of the stock itself)
+  if (firstBar && bar && firstBar.open > 0) {
+    const stockYtd = (bar.close / firstBar.open) - 1;
+    $('stockYtd').textContent = pct(stockYtd, true);
+    colorValue($('stockYtd'), stockYtd);
+    $('stockYtdSub').textContent = `₹${number(firstBar.open, 0)} → ₹${number(bar.close, 0)}`;
+  } else {
+    $('stockYtd').textContent = '—';
+    $('stockYtdSub').textContent = 'No historical bar';
+  }
+
+  // Stock badge in candlestick panel header
+  if ($('stockHeaderBadge')) {
+    const sign = totalStockPnl > 0 ? '+' : '';
+    $('stockHeaderBadge').textContent = `${state.symbol} P&L: ${sign}${money(totalStockPnl)}`;
+    colorValue($('stockHeaderBadge'), totalStockPnl);
+  }
+
+  // 3. Risk & Exposure
+  $('drawdown').textContent = pct(row.drawdown);
+  colorValue($('drawdown'), row.drawdown);
+  $('exposureSub').textContent = `${pct(row.exposure)} exposure · ${row.positions} open pos`;
+
   $('selectedBadge').textContent = state.strategy === state.data.summary.selected_model ? 'Selected before final test' : 'Comparison strategy';
-  const candles = state.data.candles[state.symbol].filter(x => x.date <= date), bar = candles.at(-1);
-  $('tickerName').textContent = state.symbol; $('lastPrice').textContent = bar ? money(bar.close, 2) : '—';
+  $('tickerName').textContent = state.symbol;
+  $('lastPrice').textContent = bar ? money(bar.close, 2) : '—';
   $('ohlc').textContent = bar ? `O ${number(bar.open)}   H ${number(bar.high)}   L ${number(bar.low)}   C ${number(bar.close)}   VOL ${number(bar.volume, 0)}` : 'No historical bar';
-  const watch = [...new Set([state.symbol, 'NETWEB', 'E2E', 'TATACOMM', 'RELIANCE'])].slice(0, 4);
+
+  // Watchlist with stock-specific return / PnL
+  const watch = [...new Set([state.symbol, 'NETWEB', 'M&M', 'TATACOMM', 'POWERGRID', 'E2E'])].slice(0, 5);
   $('watchlist').innerHTML = watch.map(symbol => {
     const c = state.data.candles[symbol].filter(x => x.date <= date), last = c.at(-1), prev = c.at(-2), ret = prev && last ? last.close / prev.close - 1 : 0;
-    return `<button class="watch-row ${state.symbol === symbol ? 'active' : ''}" data-symbol="${symbol}"><span>${symbol}<small>${last ? money(last.close, 2) : '—'}</small></span><span class="${ret >= 0 ? 'positive' : 'negative'}">${pct(ret, true)}</span></button>`;
+    const symClosed = s.trades.filter(t => t.symbol === symbol && t.date <= date && t.side === 'SELL' && t.pnl != null);
+    const symPnl = symClosed.reduce((acc, t) => acc + t.pnl, 0);
+    return `<button class="watch-row ${state.symbol === symbol ? 'active' : ''}" data-symbol="${symbol}"><span>${symbol}<small>${symClosed.length ? money(symPnl) : money(last ? last.close : 0, 1)}</small></span><span class="${ret >= 0 ? 'positive' : 'negative'}">${pct(ret, true)}</span></button>`;
   }).join('');
+
   const signal = s.signals.find(x => x.date === date && x.symbol === state.symbol);
   const available = signal && signal.score != null;
   const enter = available && signal.eligible !== false && signal.score > signal.threshold;
@@ -135,8 +207,18 @@ function render() {
   $('signalText').textContent = row.halted ? 'New entries are disabled for the rest of this run.' : signal?.eligible === false ? 'This instrument does not meet the history/liquidity rules.' : enter ? 'Above the selected threshold. Portfolio ranking and available cash still apply.' : 'The current rule does not qualify this instrument for entry.';
   $('forecast').textContent = available && signal.probability != null ? pct(signal.score, true) : 'Rule-based / unavailable';
   $('probability').textContent = signal?.probability != null ? pct(signal.probability) : '—';
-  const trades = s.trades.filter(x => x.date <= date); $('tradeCount').textContent = `${trades.length} fills`;
-  $('ledger').innerHTML = trades.length ? trades.slice(-60).reverse().map(t => `<tr><td>${t.date.slice(5)}</td><td>${t.symbol}<span class="trade-side ${t.side === 'SELL' ? 'sell' : ''}">${t.side}</span></td><td>${number(t.quantity, 0)}</td><td>${money(t.price, 2)}</td><td>${money(t.fees, 2)}</td><td class="${t.pnl > 0 ? 'positive' : t.pnl < 0 ? 'negative' : ''}">${t.pnl == null ? '—' : money(t.pnl)}</td></tr>`).join('') : '<tr><td colspan="6" class="empty">No fills yet. Advance the historical replay.</td></tr>';
+  if ($('stockSidePnl')) {
+    $('stockSidePnl').textContent = money(totalStockPnl);
+    colorValue($('stockSidePnl'), totalStockPnl);
+  }
+
+  const trades = s.trades.filter(x => x.date <= date);
+  const symTradesCount = symbolTrades.length;
+  $('tradeCount').textContent = `${trades.length} fills (${symTradesCount} for ${state.symbol})`;
+  $('ledger').innerHTML = trades.length ? trades.slice(-60).reverse().map(t => {
+    const isThisSymbol = t.symbol === state.symbol;
+    return `<tr style="${isThisSymbol ? 'background:#1a2838;' : ''}"><td>${t.date.slice(5)}</td><td><strong>${t.symbol}</strong><span class="trade-side ${t.side === 'SELL' ? 'sell' : ''}">${t.side}</span></td><td>${number(t.quantity, 0)}</td><td>${money(t.price, 2)}</td><td>${money(t.fees, 2)}</td><td class="${t.pnl > 0 ? 'positive' : t.pnl < 0 ? 'negative' : ''}">${t.pnl == null ? '—' : money(t.pnl)}</td></tr>`;
+  }).join('') : '<tr><td colspan="6" class="empty">No fills yet. Advance the historical replay.</td></tr>';
   renderCharts();
 }
 
