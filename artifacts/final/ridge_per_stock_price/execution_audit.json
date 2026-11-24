@@ -1,0 +1,10 @@
+{
+  "rejects": [
+    {
+      "date": "2025-09-08",
+      "symbol": "M&M",
+      "reason": "entry rejected: missing or locked bar"
+    }
+  ],
+  "open_positions": {}
+}

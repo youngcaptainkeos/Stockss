@@ -1,0 +1,683 @@
+{
+  "net_return": -0.09458405847418228,
+  "net_pnl": -94584.05847418227,
+  "cagr": -0.09566730015033276,
+  "sharpe": -1.3835452759576181,
+  "sharpe_zero_rf": -0.8557292796960807,
+  "annual_volatility": 0.11040901695708416,
+  "max_drawdown": -0.128776491514631,
+  "costs": 72932.62810922493,
+  "slippage": 71162.11187740834,
+  "gross_pnl_before_explicit_costs": 49510.681512451,
+  "round_trips": 321,
+  "win_rate": 0.3707165109034268,
+  "profit_factor": 0.7855834720325596,
+  "average_trade_pnl": -294.65438777003743,
+  "turnover_multiple": 46.99380165202254,
+  "mean_exposure": 0.49675176912002433,
+  "halted": false,
+  "unliquidated": false,
+  "sessions": 249,
+  "start": "2025-01-01",
+  "end": "2025-12-31",
+  "uncertainty": {
+    "method": "circular moving-block bootstrap; conditional on selected strategy, not selection-adjusted",
+    "samples": 1000,
+    "block_sessions": 20,
+    "net_return_95_interval": [
+      -0.24788079279046812,
+      0.12418849168908394
+    ],
+    "sharpe_95_interval": [
+      -3.4670505783415346,
+      0.6047332125012571
+    ]
+  },
+  "cost_stress": {
+    "1": {
+      "net_return": -0.09458405847418228,
+      "net_pnl": -94584.05847418227,
+      "cagr": -0.09566730015033276,
+      "sharpe": -1.3835452759576181,
+      "sharpe_zero_rf": -0.8557292796960807,
+      "annual_volatility": 0.11040901695708416,
+      "max_drawdown": -0.128776491514631,
+      "costs": 72932.62810922493,
+      "slippage": 71162.11187740834,
+      "gross_pnl_before_explicit_costs": 49510.681512451,
+      "round_trips": 321,
+      "win_rate": 0.3707165109034268,
+      "profit_factor": 0.7855834720325596,
+      "average_trade_pnl": -294.65438777003743,
+      "turnover_multiple": 46.99380165202254,
+      "mean_exposure": 0.49675176912002433,
+      "halted": false,
+      "unliquidated": false,
+      "sessions": 249,
+      "start": "2025-01-01",
+      "end": "2025-12-31"
+    },
+    "2": {
+      "net_return": -0.19279676244576738,
+      "net_pnl": -192796.7624457674,
+      "cagr": -0.19487704863619393,
+      "sharpe": -2.384561287945797,
+      "sharpe_zero_rf": -1.867263472066965,
+      "annual_volatility": 0.11265395579228654,
+      "max_drawdown": -0.20642967466148854,
+      "costs": 128486.98968444472,
+      "slippage": 120646.93848703025,
+      "gross_pnl_before_explicit_costs": 56337.16572570756,
+      "round_trips": 299,
+      "win_rate": 0.2842809364548495,
+      "profit_factor": 0.5809357211617885,
+      "average_trade_pnl": -644.8052255711275,
+      "turnover_multiple": 40.54626109459543,
+      "mean_exposure": 0.45066578008052127,
+      "halted": true,
+      "unliquidated": false,
+      "sessions": 249,
+      "start": "2025-01-01",
+      "end": "2025-12-31"
+    },
+    "3": {
+      "net_return": -0.19541039404668648,
+      "net_pnl": -195410.39404668647,
+      "cagr": -0.19751530137680995,
+      "sharpe": -3.028393786615447,
+      "sharpe_zero_rf": -2.384626715650817,
+      "annual_volatility": 0.09052287373776252,
+      "max_drawdown": -0.2070872676531702,
+      "costs": 100439.43868564903,
+      "slippage": 89933.22829499716,
+      "gross_pnl_before_explicit_costs": -5037.727066040286,
+      "round_trips": 148,
+      "win_rate": 0.25675675675675674,
+      "profit_factor": 0.33587485020505736,
+      "average_trade_pnl": -1320.3405003154483,
+      "turnover_multiple": 21.437183498718554,
+      "mean_exposure": 0.22780967322866957,
+      "halted": true,
+      "unliquidated": false,
+      "sessions": 249,
+      "start": "2025-01-01",
+      "end": "2025-12-31"
+    }
+  },
+  "regimes": {
+    "trend_positive": {
+      "sessions": 171,
+      "compounded_selected_day_return": -0.12095853114597765,
+      "mean_daily_return": -0.0007384241723870374
+    },
+    "trend_nonpositive": {
+      "sessions": 78,
+      "compounded_selected_day_return": 0.030003672871290465,
+      "mean_daily_return": 0.0004219880711688585
+    },
+    "high_volatility": {
+      "sessions": 15,
+      "compounded_selected_day_return": 0.005817777514751432,
+      "mean_daily_return": 0.0003931596279306356
+    },
+    "lower_volatility": {
+      "sessions": 234,
+      "compounded_selected_day_return": -0.09982109904342296,
+      "mean_daily_return": -0.0004241575142990255
+    }
+  },
+  "classification": {
+    "n": 5082,
+    "positive_prevalence": 0.5068870523415978,
+    "accuracy": 0.4931129476584022,
+    "balanced_accuracy": 0.5,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "auc": 0.4724996189269976,
+    "brier": 0.25817583864626514,
+    "log_loss": 0.7097218006680825,
+    "return_mae": 0.028918928112282246,
+    "rank_ic": -0.045303151286715554,
+    "expected_calibration_error": 0.09049302166425488,
+    "reliability_bins": [
+      {
+        "lower": 0.4,
+        "n": 5082,
+        "mean_probability": 0.41639403067734293,
+        "observed_positive": 0.5068870523415978
+      }
+    ],
+    "note": "Direction of five-session next-open price return; overlapping observations, no IID significance claim."
+  },
+  "per_stock_classification": {
+    "BHARTIARTL": {
+      "n": 242,
+      "positive_prevalence": 0.5702479338842975,
+      "accuracy": 0.4297520661157025,
+      "balanced_accuracy": 0.5,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 0.46843645484949836,
+      "brier": 0.26879234594991475,
+      "log_loss": 0.7311569797653472,
+      "return_mae": 0.021190867832505497,
+      "rank_ic": -0.017092750714679104,
+      "expected_calibration_error": 0.15400748511119128,
+      "reliability_bins": [
+        {
+          "lower": 0.4,
+          "n": 242,
+          "mean_probability": 0.41624044877310623,
+          "observed_positive": 0.5702479338842975
+        }
+      ],
+      "note": "Direction of five-session next-open price return; overlapping observations, no IID significance claim."
+    },
+    "DRREDDY": {
+      "n": 242,
+      "positive_prevalence": 0.5206611570247934,
+      "accuracy": 0.4793388429752066,
+      "balanced_accuracy": 0.5,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 0.5389983579638751,
+      "brier": 0.26046538959301885,
+      "log_loss": 0.7143437942372914,
+      "return_mae": 0.026818103361086348,
+      "rank_ic": 0.06572726777468693,
+      "expected_calibration_error": 0.10431799386014673,
+      "reliability_bins": [
+        {
+          "lower": 0.4,
+          "n": 242,
+          "mean_probability": 0.4163431631646467,
+          "observed_positive": 0.5206611570247934
+        }
+      ],
+      "note": "Direction of five-session next-open price return; overlapping observations, no IID significance claim."
+    },
+    "E2E": {
+      "n": 242,
+      "positive_prevalence": 0.384297520661157,
+      "accuracy": 0.6157024793388429,
+      "balanced_accuracy": 0.5,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 0.4725770368766689,
+      "brier": 0.2378817016034947,
+      "log_loss": 0.6687560610143416,
+      "return_mae": 0.08185588865862714,
+      "rank_ic": 0.048221549808249435,
+      "expected_calibration_error": 0.032972192058415284,
+      "reliability_bins": [
+        {
+          "lower": 0.4,
+          "n": 242,
+          "mean_probability": 0.4172697127195723,
+          "observed_positive": 0.384297520661157
+        }
+      ],
+      "note": "Direction of five-session next-open price return; overlapping observations, no IID significance claim."
+    },
+    "HDFCBANK": {
+      "n": 242,
+      "positive_prevalence": 0.5454545454545454,
+      "accuracy": 0.45454545454545453,
+      "balanced_accuracy": 0.5,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 0.4622933884297521,
+      "brier": 0.2646260782226156,
+      "log_loss": 0.7227446439047734,
+      "return_mae": 0.016497102632166565,
+      "rank_ic": -0.07869772926806366,
+      "expected_calibration_error": 0.12920066473191938,
+      "reliability_bins": [
+        {
+          "lower": 0.4,
+          "n": 242,
+          "mean_probability": 0.41625388072262604,
+          "observed_positive": 0.5454545454545454
+        }
+      ],
+      "note": "Direction of five-session next-open price return; overlapping observations, no IID significance claim."
+    },
+    "HINDUNILVR": {
+      "n": 242,
+      "positive_prevalence": 0.4380165289256198,
+      "accuracy": 0.5619834710743802,
+      "balanced_accuracy": 0.5,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 0.4900110987791343,
+      "brier": 0.24663838159555249,
+      "log_loss": 0.6864273534200431,
+      "return_mae": 0.02280081437459514,
+      "rank_ic": -0.017338344142120276,
+      "expected_calibration_error": 0.02171427932474984,
+      "reliability_bins": [
+        {
+          "lower": 0.4,
+          "n": 242,
+          "mean_probability": 0.41630224960087,
+          "observed_positive": 0.4380165289256198
+        }
+      ],
+      "note": "Direction of five-session next-open price return; overlapping observations, no IID significance claim."
+    },
+    "ICICIBANK": {
+      "n": 242,
+      "positive_prevalence": 0.4669421487603306,
+      "accuracy": 0.5330578512396694,
+      "balanced_accuracy": 0.5,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 0.45774164780133086,
+      "brier": 0.25149622316527065,
+      "log_loss": 0.6962359489647411,
+      "return_mae": 0.01853916460688737,
+      "rank_ic": -0.042210086281617674,
+      "expected_calibration_error": 0.050702650083824685,
+      "reliability_bins": [
+        {
+          "lower": 0.4,
+          "n": 242,
+          "mean_probability": 0.4162394986765059,
+          "observed_positive": 0.4669421487603306
+        }
+      ],
+      "note": "Direction of five-session next-open price return; overlapping observations, no IID significance claim."
+    },
+    "INFY": {
+      "n": 242,
+      "positive_prevalence": 0.5082644628099173,
+      "accuracy": 0.49173553719008267,
+      "balanced_accuracy": 0.5,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 0.5402063264330123,
+      "brier": 0.25831574252684264,
+      "log_loss": 0.710000861116544,
+      "return_mae": 0.02633868308169969,
+      "rank_ic": 0.0575528618039891,
+      "expected_calibration_error": 0.09183357067129527,
+      "reliability_bins": [
+        {
+          "lower": 0.4,
+          "n": 242,
+          "mean_probability": 0.41643089213862206,
+          "observed_positive": 0.5082644628099173
+        }
+      ],
+      "note": "Direction of five-session next-open price return; overlapping observations, no IID significance claim."
+    },
+    "ITC": {
+      "n": 243,
+      "positive_prevalence": 0.4732510288065844,
+      "accuracy": 0.5267489711934157,
+      "balanced_accuracy": 0.5,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 0.5185801630434783,
+      "brier": 0.2525255161739589,
+      "log_loss": 0.6983130579634764,
+      "return_mae": 0.01756539801594353,
+      "rank_ic": 0.03804909336909076,
+      "expected_calibration_error": 0.05694453750958017,
+      "reliability_bins": [
+        {
+          "lower": 0.4,
+          "n": 243,
+          "mean_probability": 0.4163064912970042,
+          "observed_positive": 0.4732510288065844
+        }
+      ],
+      "note": "Direction of five-session next-open price return; overlapping observations, no IID significance claim."
+    },
+    "LT": {
+      "n": 242,
+      "positive_prevalence": 0.5371900826446281,
+      "accuracy": 0.4628099173553719,
+      "balanced_accuracy": 0.5,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 0.5256524725274726,
+      "brier": 0.2632166338367924,
+      "log_loss": 0.719897977850148,
+      "return_mae": 0.021502307934226167,
+      "rank_ic": 0.05768199337577457,
+      "expected_calibration_error": 0.12090610058335494,
+      "reliability_bins": [
+        {
+          "lower": 0.4,
+          "n": 242,
+          "mean_probability": 0.41628398206127315,
+          "observed_positive": 0.5371900826446281
+        }
+      ],
+      "note": "Direction of five-session next-open price return; overlapping observations, no IID significance claim."
+    },
+    "M&M": {
+      "n": 241,
+      "positive_prevalence": 0.5020746887966805,
+      "accuracy": 0.4979253112033195,
+      "balanced_accuracy": 0.5,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 0.550241046831956,
+      "brier": 0.25735571322787504,
+      "log_loss": 0.7080654182559075,
+      "return_mae": 0.03267861661142646,
+      "rank_ic": 0.10340577187897593,
+      "expected_calibration_error": 0.08575484419841561,
+      "reliability_bins": [
+        {
+          "lower": 0.4,
+          "n": 241,
+          "mean_probability": 0.4163198445982649,
+          "observed_positive": 0.5020746887966805
+        }
+      ],
+      "note": "Direction of five-session next-open price return; overlapping observations, no IID significance claim."
+    },
+    "MARUTI": {
+      "n": 242,
+      "positive_prevalence": 0.6033057851239669,
+      "accuracy": 0.39669421487603307,
+      "balanced_accuracy": 0.5,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 0.4901897831050228,
+      "brier": 0.2743061772878791,
+      "log_loss": 0.7422886323443383,
+      "return_mae": 0.02198096686674717,
+      "rank_ic": -0.027772550169131032,
+      "expected_calibration_error": 0.18700764374437934,
+      "reliability_bins": [
+        {
+          "lower": 0.4,
+          "n": 242,
+          "mean_probability": 0.4162981413795876,
+          "observed_positive": 0.6033057851239669
+        }
+      ],
+      "note": "Direction of five-session next-open price return; overlapping observations, no IID significance claim."
+    },
+    "NETWEB": {
+      "n": 242,
+      "positive_prevalence": 0.47107438016528924,
+      "accuracy": 0.5289256198347108,
+      "balanced_accuracy": 0.5,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 0.41091008771929827,
+      "brier": 0.25221493677870055,
+      "log_loss": 0.6976879222427147,
+      "return_mae": 0.07633165124892663,
+      "rank_ic": -0.11696841299428824,
+      "expected_calibration_error": 0.05390776756981258,
+      "reliability_bins": [
+        {
+          "lower": 0.4,
+          "n": 242,
+          "mean_probability": 0.41716661259547666,
+          "observed_positive": 0.47107438016528924
+        }
+      ],
+      "note": "Direction of five-session next-open price return; overlapping observations, no IID significance claim."
+    },
+    "NTPC": {
+      "n": 242,
+      "positive_prevalence": 0.4834710743801653,
+      "accuracy": 0.5165289256198347,
+      "balanced_accuracy": 0.5,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 0.40335042735042737,
+      "brier": 0.25425933089962105,
+      "log_loss": 0.701814527843774,
+      "return_mae": 0.022219462835435796,
+      "rank_ic": -0.19450470397484632,
+      "expected_calibration_error": 0.0671011154181569,
+      "reliability_bins": [
+        {
+          "lower": 0.4,
+          "n": 242,
+          "mean_probability": 0.4163699589620084,
+          "observed_positive": 0.4834710743801653
+        }
+      ],
+      "note": "Direction of five-session next-open price return; overlapping observations, no IID significance claim."
+    },
+    "POWERGRID": {
+      "n": 242,
+      "positive_prevalence": 0.4462809917355372,
+      "accuracy": 0.5537190082644629,
+      "balanced_accuracy": 0.5,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 0.4853510226644555,
+      "brier": 0.2480169655522038,
+      "log_loss": 0.6892105222796694,
+      "return_mae": 0.02457858874269207,
+      "rank_ic": -0.045939789072178515,
+      "expected_calibration_error": 0.029951161027302053,
+      "reliability_bins": [
+        {
+          "lower": 0.4,
+          "n": 242,
+          "mean_probability": 0.41632983070823515,
+          "observed_positive": 0.4462809917355372
+        }
+      ],
+      "note": "Direction of five-session next-open price return; overlapping observations, no IID significance claim."
+    },
+    "RELIANCE": {
+      "n": 242,
+      "positive_prevalence": 0.5785123966942148,
+      "accuracy": 0.4214876033057851,
+      "balanced_accuracy": 0.5,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 0.5018207282913165,
+      "brier": 0.27017766894031975,
+      "log_loss": 0.7339540221362625,
+      "return_mae": 0.023285708981154986,
+      "rank_ic": 0.02265482895692533,
+      "expected_calibration_error": 0.16228129219127774,
+      "reliability_bins": [
+        {
+          "lower": 0.4,
+          "n": 242,
+          "mean_probability": 0.4162311045029371,
+          "observed_positive": 0.5785123966942148
+        }
+      ],
+      "note": "Direction of five-session next-open price return; overlapping observations, no IID significance claim."
+    },
+    "SBIN": {
+      "n": 242,
+      "positive_prevalence": 0.5702479338842975,
+      "accuracy": 0.4297520661157025,
+      "balanced_accuracy": 0.5,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 0.45108695652173914,
+      "brier": 0.2687914849119532,
+      "log_loss": 0.7311551966397507,
+      "return_mae": 0.021028906357949545,
+      "rank_ic": 0.014505074070855934,
+      "expected_calibration_error": 0.15396680814677688,
+      "reliability_bins": [
+        {
+          "lower": 0.4,
+          "n": 242,
+          "mean_probability": 0.41628112573752063,
+          "observed_positive": 0.5702479338842975
+        }
+      ],
+      "note": "Direction of five-session next-open price return; overlapping observations, no IID significance claim."
+    },
+    "SUNPHARMA": {
+      "n": 242,
+      "positive_prevalence": 0.5289256198347108,
+      "accuracy": 0.47107438016528924,
+      "balanced_accuracy": 0.5,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 0.47231359649122806,
+      "brier": 0.26186276490096017,
+      "log_loss": 0.7171656559934196,
+      "return_mae": 0.02285949965192766,
+      "rank_ic": 0.02498770193958716,
+      "expected_calibration_error": 0.11263994526262738,
+      "reliability_bins": [
+        {
+          "lower": 0.4,
+          "n": 242,
+          "mean_probability": 0.4162856745720834,
+          "observed_positive": 0.5289256198347108
+        }
+      ],
+      "note": "Direction of five-session next-open price return; overlapping observations, no IID significance claim."
+    },
+    "TATACOMM": {
+      "n": 242,
+      "positive_prevalence": 0.4628099173553719,
+      "accuracy": 0.5371900826446281,
+      "balanced_accuracy": 0.5,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 0.5516826923076923,
+      "brier": 0.25076470511233095,
+      "log_loss": 0.694757484739376,
+      "return_mae": 0.03263388094282398,
+      "rank_ic": 0.04386953406348208,
+      "expected_calibration_error": 0.04647975807869836,
+      "reliability_bins": [
+        {
+          "lower": 0.4,
+          "n": 242,
+          "mean_probability": 0.41633015927667355,
+          "observed_positive": 0.4628099173553719
+        }
+      ],
+      "note": "Direction of five-session next-open price return; overlapping observations, no IID significance claim."
+    },
+    "TATASTEEL": {
+      "n": 242,
+      "positive_prevalence": 0.5785123966942148,
+      "accuracy": 0.4214876033057851,
+      "balanced_accuracy": 0.5,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 0.48084733893557424,
+      "brier": 0.27015490028643535,
+      "log_loss": 0.7339071807325384,
+      "return_mae": 0.029787942330142016,
+      "rank_ic": -0.03176332332081898,
+      "expected_calibration_error": 0.16220725334498898,
+      "reliability_bins": [
+        {
+          "lower": 0.4,
+          "n": 242,
+          "mean_probability": 0.41630514334922586,
+          "observed_positive": 0.5785123966942148
+        }
+      ],
+      "note": "Direction of five-session next-open price return; overlapping observations, no IID significance claim."
+    },
+    "TCS": {
+      "n": 242,
+      "positive_prevalence": 0.45454545454545453,
+      "accuracy": 0.5454545454545454,
+      "balanced_accuracy": 0.5,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 0.5272038567493114,
+      "brier": 0.24935141429854604,
+      "log_loss": 0.6919029365193119,
+      "return_mae": 0.0242852672790794,
+      "rank_ic": 0.09897099260852131,
+      "expected_calibration_error": 0.03813181495331508,
+      "reliability_bins": [
+        {
+          "lower": 0.4,
+          "n": 242,
+          "mean_probability": 0.41641363959213945,
+          "observed_positive": 0.45454545454545453
+        }
+      ],
+      "note": "Direction of five-session next-open price return; overlapping observations, no IID significance claim."
+    },
+    "ULTRACEMCO": {
+      "n": 242,
+      "positive_prevalence": 0.5206611570247934,
+      "accuracy": 0.4793388429752066,
+      "balanced_accuracy": 0.5,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 0.4111590038314176,
+      "brier": 0.2604984961992402,
+      "log_loss": 0.7144119350754354,
+      "return_mae": 0.022581119328394312,
+      "rank_ic": -0.15055285697064863,
+      "expected_calibration_error": 0.10438801205004078,
+      "reliability_bins": [
+        {
+          "lower": 0.4,
+          "n": 242,
+          "mean_probability": 0.41627314497475265,
+          "observed_positive": 0.5206611570247934
+        }
+      ],
+      "note": "Direction of five-session next-open price return; overlapping observations, no IID significance claim."
+    }
+  },
+  "per_stock_pnl": {
+    "NETWEB": 15287.60380895259,
+    "E2E": -31354.624761763207,
+    "TATACOMM": -11354.776964307815,
+    "TCS": -12821.859856840292,
+    "INFY": -11835.171607976186,
+    "RELIANCE": -4301.456597391814,
+    "HDFCBANK": -8211.052243693024,
+    "ICICIBANK": -12251.882300105812,
+    "SBIN": -3511.4270066102035,
+    "ITC": -9655.470176244371,
+    "HINDUNILVR": -16397.612449702603,
+    "LT": -5018.6824723628815,
+    "MARUTI": 17722.604631395167,
+    "M&M": 1662.9383400301158,
+    "SUNPHARMA": 4257.16816100727,
+    "DRREDDY": 12600.711375335755,
+    "NTPC": -12239.48410236564,
+    "POWERGRID": -6573.6102834315625,
+    "ULTRACEMCO": -304.87248668441316,
+    "TATASTEEL": 3384.7502701441,
+    "BHARTIARTL": -3667.851751567204
+  },
+  "rejected_orders": 7
+}

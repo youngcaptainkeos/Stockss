@@ -1,0 +1,153 @@
+{
+  "net_return": 0.043999357958678376,
+  "net_pnl": 43999.35795867839,
+  "cagr": 0.044541106149459164,
+  "sharpe": -0.08191845142255849,
+  "sharpe_zero_rf": 0.45653087662067254,
+  "annual_volatility": 0.10822865262593755,
+  "max_drawdown": -0.13232420505880393,
+  "costs": 3441.0897538458275,
+  "slippage": 2054.4118944090587,
+  "gross_pnl_before_explicit_costs": 49494.85960693328,
+  "round_trips": 21,
+  "win_rate": 0.5714285714285714,
+  "profit_factor": 1.8432491790683536,
+  "average_trade_pnl": 2095.2075218418418,
+  "turnover_multiple": 1.7576505778235474,
+  "mean_exposure": 0.8515249741142326,
+  "halted": false,
+  "unliquidated": false,
+  "sessions": 249,
+  "start": "2025-01-01",
+  "end": "2025-12-31",
+  "uncertainty": {
+    "method": "circular moving-block bootstrap; conditional on selected strategy, not selection-adjusted",
+    "samples": 1000,
+    "block_sessions": 20,
+    "net_return_95_interval": [
+      -0.15988493702095027,
+      0.28991087358664364
+    ],
+    "sharpe_95_interval": [
+      -2.213636772895825,
+      1.8613360282294127
+    ]
+  },
+  "cost_stress": {
+    "1": {
+      "net_return": 0.043999357958678376,
+      "net_pnl": 43999.35795867839,
+      "cagr": 0.044541106149459164,
+      "sharpe": -0.08191845142255849,
+      "sharpe_zero_rf": 0.45653087662067254,
+      "annual_volatility": 0.10822865262593755,
+      "max_drawdown": -0.13232420505880393,
+      "costs": 3441.0897538458275,
+      "slippage": 2054.4118944090587,
+      "gross_pnl_before_explicit_costs": 49494.85960693328,
+      "round_trips": 21,
+      "win_rate": 0.5714285714285714,
+      "profit_factor": 1.8432491790683536,
+      "average_trade_pnl": 2095.2075218418418,
+      "turnover_multiple": 1.7576505778235474,
+      "mean_exposure": 0.8515249741142326,
+      "halted": false,
+      "unliquidated": false,
+      "sessions": 249,
+      "start": "2025-01-01",
+      "end": "2025-12-31"
+    },
+    "2": {
+      "net_return": 0.038461967489446636,
+      "net_pnl": 38461.967489446746,
+      "cagr": 0.03893427153951623,
+      "sharpe": -0.13114955384560323,
+      "sharpe_zero_rf": 0.40615822213775393,
+      "annual_volatility": 0.10845859279592002,
+      "max_drawdown": -0.1326322132473401,
+      "costs": 6880.170034784437,
+      "slippage": 4106.872088806147,
+      "gross_pnl_before_explicit_costs": 49449.00961303733,
+      "round_trips": 21,
+      "win_rate": 0.5714285714285714,
+      "profit_factor": 1.7069038432221713,
+      "average_trade_pnl": 1831.5222614022157,
+      "turnover_multiple": 1.7566704817056273,
+      "mean_exposure": 0.853245782778559,
+      "halted": false,
+      "unliquidated": false,
+      "sessions": 249,
+      "start": "2025-01-01",
+      "end": "2025-12-31"
+    },
+    "3": {
+      "net_return": 0.03249866071981833,
+      "net_pnl": 32498.660719818436,
+      "cagr": 0.032896582110565564,
+      "sharpe": -0.1848587515521813,
+      "sharpe_zero_rf": 0.3523825881001917,
+      "annual_volatility": 0.10847200500089614,
+      "max_drawdown": -0.13273860406259175,
+      "costs": 10292.973241973828,
+      "slippage": 6135.50240295396,
+      "gross_pnl_before_explicit_costs": 48927.13636474623,
+      "round_trips": 21,
+      "win_rate": 0.5714285714285714,
+      "profit_factor": 1.5747803229667363,
+      "average_trade_pnl": 1547.5552723722994,
+      "turnover_multiple": 1.7483990124618527,
+      "mean_exposure": 0.8514788041806459,
+      "halted": false,
+      "unliquidated": false,
+      "sessions": 249,
+      "start": "2025-01-01",
+      "end": "2025-12-31"
+    }
+  },
+  "regimes": {
+    "trend_positive": {
+      "sessions": 171,
+      "compounded_selected_day_return": 0.049519043449398614,
+      "mean_daily_return": 0.0002981071531735022
+    },
+    "trend_nonpositive": {
+      "sessions": 78,
+      "compounded_selected_day_return": -0.00525925234532143,
+      "mean_daily_return": -2.7625801359037315e-05
+    },
+    "high_volatility": {
+      "sessions": 15,
+      "compounded_selected_day_return": 0.03618784147874665,
+      "mean_daily_return": 0.002389382941898166
+    },
+    "lower_volatility": {
+      "sessions": 234,
+      "compounded_selected_day_return": 0.007538706947944007,
+      "mean_daily_return": 5.547336135979261e-05
+    }
+  },
+  "per_stock_pnl": {
+    "NETWEB": 4981.973902100581,
+    "E2E": -21856.82789017042,
+    "TATACOMM": 2791.536289904667,
+    "TCS": -7490.473688161819,
+    "INFY": -4809.743042509675,
+    "RELIANCE": 11333.947068636175,
+    "HDFCBANK": 5392.276181302994,
+    "ICICIBANK": 2127.2468728497042,
+    "SBIN": 10098.353404157406,
+    "ITC": -5018.36303271412,
+    "HINDUNILVR": -102.42977082917787,
+    "LT": 5163.532884928281,
+    "MARUTI": 17330.516561621043,
+    "M&M": 9129.606183766035,
+    "SUNPHARMA": -3620.3573794516706,
+    "DRREDDY": -3553.1408641399103,
+    "NTPC": -204.03372285881346,
+    "POWERGRID": -5522.989095431149,
+    "ULTRACEMCO": 825.3356725686608,
+    "TATASTEEL": 13781.925690786184,
+    "BHARTIARTL": 13221.465732323712
+  },
+  "rejected_orders": 0
+}

@@ -1,0 +1,589 @@
+{
+  "tag": "final_fit",
+  "family": "ridge",
+  "features": "context",
+  "windows": [
+    [
+      "2024-06-21",
+      "2024-09-19"
+    ],
+    [
+      "2024-09-20",
+      "2024-12-20"
+    ]
+  ],
+  "budget": 8,
+  "selected": {
+    "pooled": {
+      "k": 8,
+      "threshold": 0.01,
+      "alpha": 3.320258070519293
+    },
+    "per_stock": {
+      "k": 17,
+      "threshold": 0.015,
+      "alpha": 0.6290644294586147
+    },
+    "hybrid": {
+      "k": 17,
+      "threshold": 0.015,
+      "alpha": 0.6290644294586147
+    }
+  },
+  "trials": [
+    {
+      "trial": 0,
+      "params": {
+        "k": 12,
+        "threshold": 0.015,
+        "alpha": 25.37815508265663
+      },
+      "architecture_objectives": {
+        "pooled": -1.3391830550806612,
+        "per_stock": -2.405555586462315,
+        "hybrid": -0.7159851770945718
+      },
+      "windows": [
+        {
+          "architecture": "pooled",
+          "start": "2024-06-21",
+          "end": "2024-09-19",
+          "net_return": 0.001359627803896979,
+          "sharpe": -0.9787518397515704,
+          "stress_net_return": -0.008556476319064199,
+          "objective": -1.7921975244956447
+        },
+        {
+          "architecture": "per_stock",
+          "start": "2024-06-21",
+          "end": "2024-09-19",
+          "net_return": 0.01609385205307401,
+          "sharpe": 0.1417872144009481,
+          "stress_net_return": 9.983449544237466e-05,
+          "objective": -1.2032602908953098
+        },
+        {
+          "architecture": "hybrid",
+          "start": "2024-06-21",
+          "end": "2024-09-19",
+          "net_return": 0.019029154506591484,
+          "sharpe": 0.3131142288212206,
+          "stress_net_return": 0.0009200339201558272,
+          "objective": -0.924568001628537
+        },
+        {
+          "architecture": "pooled",
+          "start": "2024-09-20",
+          "end": "2024-12-20",
+          "net_return": 0.025446045262051076,
+          "sharpe": 0.8194620985983408,
+          "stress_net_return": 0.015346805225906035,
+          "objective": 0.019860353164289413
+        },
+        {
+          "architecture": "per_stock",
+          "start": "2024-09-20",
+          "end": "2024-12-20",
+          "net_return": -0.007953430183490262,
+          "sharpe": -1.590848728669684,
+          "stress_net_return": -0.024855546636786574,
+          "objective": -2.8063206849846494
+        },
+        {
+          "architecture": "hybrid",
+          "start": "2024-09-20",
+          "end": "2024-12-20",
+          "net_return": 0.029596380885524853,
+          "sharpe": 0.9207759931219486,
+          "stress_net_return": 0.013544949447187538,
+          "objective": -0.09023670349267583
+        }
+      ]
+    },
+    {
+      "trial": 1,
+      "params": {
+        "k": 17,
+        "threshold": 0.015,
+        "alpha": 12.561043700013547
+      },
+      "architecture_objectives": {
+        "pooled": -1.3598092196859497,
+        "per_stock": -1.9164580393161887,
+        "hybrid": -0.526103046224924
+      },
+      "windows": [
+        {
+          "architecture": "pooled",
+          "start": "2024-06-21",
+          "end": "2024-09-19",
+          "net_return": -0.001102499601348006,
+          "sharpe": -1.2090186497790925,
+          "stress_net_return": -0.01030668499198506,
+          "objective": -1.9838347425744067
+        },
+        {
+          "architecture": "per_stock",
+          "start": "2024-06-21",
+          "end": "2024-09-19",
+          "net_return": 0.03004206868737036,
+          "sharpe": 0.9402500410388002,
+          "stress_net_return": 0.004658055821247453,
+          "objective": -0.6054071530831735
+        },
+        {
+          "architecture": "hybrid",
+          "start": "2024-06-21",
+          "end": "2024-09-19",
+          "net_return": 0.02541568470558553,
+          "sharpe": 0.6606989924581167,
+          "stress_net_return": 0.003419672178062161,
+          "objective": -0.6883548836310752
+        },
+        {
+          "architecture": "pooled",
+          "start": "2024-09-20",
+          "end": "2024-12-20",
+          "net_return": 0.03147769572559711,
+          "sharpe": 1.282785475128351,
+          "stress_net_return": 0.021763604306925588,
+          "objective": 0.5122673489794208
+        },
+        {
+          "architecture": "per_stock",
+          "start": "2024-09-20",
+          "end": "2024-12-20",
+          "net_return": -0.0020127468355465306,
+          "sharpe": -1.0255155058848209,
+          "stress_net_return": -0.022604464209121655,
+          "objective": -2.3534750013938606
+        },
+        {
+          "architecture": "hybrid",
+          "start": "2024-09-20",
+          "end": "2024-12-20",
+          "net_return": 0.03295838464461953,
+          "sharpe": 1.1392574556906574,
+          "stress_net_return": 0.014584666162281046,
+          "objective": -0.03934753400647041
+        }
+      ]
+    },
+    {
+      "trial": 2,
+      "params": {
+        "k": 17,
+        "threshold": 0.015,
+        "alpha": 0.6290644294586147
+      },
+      "architecture_objectives": {
+        "pooled": -1.3598092196859497,
+        "per_stock": -1.8540192238369306,
+        "hybrid": -0.31121078809552294
+      },
+      "windows": [
+        {
+          "architecture": "pooled",
+          "start": "2024-06-21",
+          "end": "2024-09-19",
+          "net_return": -0.001102499601348006,
+          "sharpe": -1.2090186497790925,
+          "stress_net_return": -0.01030668499198506,
+          "objective": -1.9838347425744067
+        },
+        {
+          "architecture": "per_stock",
+          "start": "2024-06-21",
+          "end": "2024-09-19",
+          "net_return": 0.032504159830608614,
+          "sharpe": 1.0379405520163552,
+          "stress_net_return": 0.005447952587778193,
+          "objective": -0.5409051268488532
+        },
+        {
+          "architecture": "hybrid",
+          "start": "2024-06-21",
+          "end": "2024-09-19",
+          "net_return": 0.03114111111324691,
+          "sharpe": 0.9956821562449947,
+          "stress_net_return": 0.00761393877644978,
+          "objective": -0.4393855492154517
+        },
+        {
+          "architecture": "pooled",
+          "start": "2024-09-20",
+          "end": "2024-12-20",
+          "net_return": 0.03147769572559711,
+          "sharpe": 1.282785475128351,
+          "stress_net_return": 0.021763604306925588,
+          "objective": 0.5122673489794208
+        },
+        {
+          "architecture": "per_stock",
+          "start": "2024-09-20",
+          "end": "2024-12-20",
+          "net_return": -0.0015571310705079222,
+          "sharpe": -1.0069201805461523,
+          "stress_net_return": -0.02120024963517142,
+          "objective": -2.2917239228329565
+        },
+        {
+          "architecture": "hybrid",
+          "start": "2024-09-20",
+          "end": "2024-12-20",
+          "net_return": 0.03810228449407438,
+          "sharpe": 1.2885941856408007,
+          "stress_net_return": 0.01638735601945651,
+          "objective": 0.0733134952642634
+        }
+      ]
+    },
+    {
+      "trial": 3,
+      "params": {
+        "k": 25,
+        "threshold": 0.015,
+        "alpha": 171.23375973163948
+      },
+      "architecture_objectives": {
+        "pooled": -0.8646430292522379,
+        "per_stock": -2.2550966278892943,
+        "hybrid": -0.48075464651626143
+      },
+      "windows": [
+        {
+          "architecture": "pooled",
+          "start": "2024-06-21",
+          "end": "2024-09-19",
+          "net_return": 0.00042843455334429237,
+          "sharpe": -0.9403348637665659,
+          "stress_net_return": -0.011663501169258184,
+          "objective": -1.8255193670576262
+        },
+        {
+          "architecture": "per_stock",
+          "start": "2024-06-21",
+          "end": "2024-09-19",
+          "net_return": 0.029825666643462645,
+          "sharpe": 1.0343396971335366,
+          "stress_net_return": 0.008074261760580015,
+          "objective": -0.44359789138145905
+        },
+        {
+          "architecture": "hybrid",
+          "start": "2024-06-21",
+          "end": "2024-09-19",
+          "net_return": 0.019285993086203268,
+          "sharpe": 0.30671591353047445,
+          "stress_net_return": -0.0029540892088638637,
+          "objective": -1.0992573011367501
+        },
+        {
+          "architecture": "pooled",
+          "start": "2024-09-20",
+          "end": "2024-12-20",
+          "net_return": 0.06832795203123343,
+          "sharpe": 2.899054064536155,
+          "stress_net_return": 0.05343482716697534,
+          "objective": 2.0179859841639267
+        },
+        {
+          "architecture": "per_stock",
+          "start": "2024-09-20",
+          "end": "2024-12-20",
+          "net_return": -0.00326535282746121,
+          "sharpe": -1.5583618801484465,
+          "stress_net_return": -0.01849780041586624,
+          "objective": -2.858929540058573
+        },
+        {
+          "architecture": "hybrid",
+          "start": "2024-09-20",
+          "end": "2024-12-20",
+          "net_return": 0.06539926599953616,
+          "sharpe": 2.4622287608418403,
+          "stress_net_return": 0.04454413103453336,
+          "objective": 1.374753317345205
+        }
+      ]
+    },
+    {
+      "trial": 4,
+      "params": {
+        "k": 17,
+        "threshold": 0.015,
+        "alpha": 0.10473489699945053
+      },
+      "architecture_objectives": {
+        "pooled": -1.3598092196859497,
+        "per_stock": -1.9819340164437964,
+        "hybrid": -0.35081100699787476
+      },
+      "windows": [
+        {
+          "architecture": "pooled",
+          "start": "2024-06-21",
+          "end": "2024-09-19",
+          "net_return": -0.001102499601348006,
+          "sharpe": -1.2090186497790925,
+          "stress_net_return": -0.01030668499198506,
+          "objective": -1.9838347425744067
+        },
+        {
+          "architecture": "per_stock",
+          "start": "2024-06-21",
+          "end": "2024-09-19",
+          "net_return": 0.03152872244584737,
+          "sharpe": 0.9831168527904757,
+          "stress_net_return": 0.004593191889408432,
+          "objective": -0.5876748882244223
+        },
+        {
+          "architecture": "hybrid",
+          "start": "2024-06-21",
+          "end": "2024-09-19",
+          "net_return": 0.02972768243248214,
+          "sharpe": 0.9136233242115612,
+          "stress_net_return": 0.006727247864859898,
+          "objective": -0.49218584108525415
+        },
+        {
+          "architecture": "pooled",
+          "start": "2024-09-20",
+          "end": "2024-12-20",
+          "net_return": 0.03147769572559711,
+          "sharpe": 1.282785475128351,
+          "stress_net_return": 0.021763604306925588,
+          "objective": 0.5122673489794208
+        },
+        {
+          "architecture": "per_stock",
+          "start": "2024-09-20",
+          "end": "2024-12-20",
+          "net_return": -0.00353369835247086,
+          "sharpe": -1.131772772650575,
+          "stress_net_return": -0.023647849395711407,
+          "objective": -2.4466870591835876
+        },
+        {
+          "architecture": "hybrid",
+          "start": "2024-09-20",
+          "end": "2024-12-20",
+          "net_return": 0.03810228449407438,
+          "sharpe": 1.2885941856408007,
+          "stress_net_return": 0.01638735601945651,
+          "objective": 0.0733134952642634
+        }
+      ]
+    },
+    {
+      "trial": 5,
+      "params": {
+        "k": 25,
+        "threshold": 0.006,
+        "alpha": 0.1498009517062952
+      },
+      "architecture_objectives": {
+        "pooled": -0.36996922713156155,
+        "per_stock": -3.0253576387782535,
+        "hybrid": -1.273359596824952
+      },
+      "windows": [
+        {
+          "architecture": "pooled",
+          "start": "2024-06-21",
+          "end": "2024-09-19",
+          "net_return": 0.08244304745249864,
+          "sharpe": 2.878658358576851,
+          "stress_net_return": 0.04699961851975365,
+          "objective": 1.310193244079105
+        },
+        {
+          "architecture": "per_stock",
+          "start": "2024-06-21",
+          "end": "2024-09-19",
+          "net_return": 0.008763276434743617,
+          "sharpe": -0.21186877858383923,
+          "stress_net_return": -0.021622057330915156,
+          "objective": -1.584311062952448
+        },
+        {
+          "architecture": "hybrid",
+          "start": "2024-06-21",
+          "end": "2024-09-19",
+          "net_return": 0.038250328621167506,
+          "sharpe": 1.0789698926395095,
+          "stress_net_return": 0.0027485475296615824,
+          "objective": -0.5286159603250952
+        },
+        {
+          "architecture": "pooled",
+          "start": "2024-09-20",
+          "end": "2024-12-20",
+          "net_return": 0.02804386391007907,
+          "sharpe": 0.5677834258066008,
+          "stress_net_return": -0.009131850260081897,
+          "objective": -0.9300233842017838
+        },
+        {
+          "architecture": "per_stock",
+          "start": "2024-09-20",
+          "end": "2024-12-20",
+          "net_return": -0.031246549689928016,
+          "sharpe": -2.1340050266580346,
+          "stress_net_return": -0.05973019078132169,
+          "objective": -3.5057064973868552
+        },
+        {
+          "architecture": "hybrid",
+          "start": "2024-09-20",
+          "end": "2024-12-20",
+          "net_return": 0.003051193404172592,
+          "sharpe": -0.32100660185761504,
+          "stress_net_return": -0.030706337602671052,
+          "objective": -1.5216074756582376
+        }
+      ]
+    },
+    {
+      "trial": 6,
+      "params": {
+        "k": 8,
+        "threshold": 0.01,
+        "alpha": 3.320258070519293
+      },
+      "architecture_objectives": {
+        "pooled": 0.030031000684548875,
+        "per_stock": -4.007835591609923,
+        "hybrid": -0.9909040454124571
+      },
+      "windows": [
+        {
+          "architecture": "pooled",
+          "start": "2024-06-21",
+          "end": "2024-09-19",
+          "net_return": 0.03625825484171585,
+          "sharpe": 1.092207345110876,
+          "stress_net_return": 0.016303058402240556,
+          "objective": 0.018869397602823065
+        },
+        {
+          "architecture": "per_stock",
+          "start": "2024-06-21",
+          "end": "2024-09-19",
+          "net_return": -0.005242251647027407,
+          "sharpe": -0.920664839061408,
+          "stress_net_return": -0.03458483250046607,
+          "objective": -2.37389337495415
+        },
+        {
+          "architecture": "hybrid",
+          "start": "2024-06-21",
+          "end": "2024-09-19",
+          "net_return": 0.030909623216272886,
+          "sharpe": 0.6854179134774158,
+          "stress_net_return": -0.002138808673164294,
+          "objective": -0.6968022994552806
+        },
+        {
+          "architecture": "pooled",
+          "start": "2024-09-20",
+          "end": "2024-12-20",
+          "net_return": 0.03691469627908073,
+          "sharpe": 1.330981999455387,
+          "stress_net_return": 0.01655593265103117,
+          "objective": 0.0635158099297263
+        },
+        {
+          "architecture": "per_stock",
+          "start": "2024-09-20",
+          "end": "2024-12-20",
+          "net_return": -0.02946783615043569,
+          "sharpe": -2.8754561539822157,
+          "stress_net_return": -0.056501669431248125,
+          "objective": -4.552482997161847
+        },
+        {
+          "architecture": "hybrid",
+          "start": "2024-09-20",
+          "end": "2024-12-20",
+          "net_return": 0.02229731040578442,
+          "sharpe": 0.3987481500838593,
+          "stress_net_return": -0.008442078674587239,
+          "objective": -1.088937960731516
+        }
+      ]
+    },
+    {
+      "trial": 7,
+      "params": {
+        "k": 8,
+        "threshold": 0.006,
+        "alpha": 604.7825293794792
+      },
+      "architecture_objectives": {
+        "pooled": -1.7310311807832832,
+        "per_stock": -2.776921788885021,
+        "hybrid": -0.9368610538358559
+      },
+      "windows": [
+        {
+          "architecture": "pooled",
+          "start": "2024-06-21",
+          "end": "2024-09-19",
+          "net_return": 0.01727300939968246,
+          "sharpe": 0.14848926750088012,
+          "stress_net_return": -0.018729587422349758,
+          "objective": -1.2791113633454974
+        },
+        {
+          "architecture": "per_stock",
+          "start": "2024-06-21",
+          "end": "2024-09-19",
+          "net_return": 0.007782565144051956,
+          "sharpe": -0.2731647696806039,
+          "stress_net_return": -0.022228734271489303,
+          "objective": -1.6895831334552325
+        },
+        {
+          "architecture": "hybrid",
+          "start": "2024-06-21",
+          "end": "2024-09-19",
+          "net_return": 0.02978977440236985,
+          "sharpe": 0.6390871299322335,
+          "stress_net_return": -0.0065983206956107265,
+          "objective": -0.8334007943633047
+        },
+        {
+          "architecture": "pooled",
+          "start": "2024-09-20",
+          "end": "2024-12-20",
+          "net_return": 0.002652668756788268,
+          "sharpe": -0.4430942832829629,
+          "stress_net_return": -0.03229430628888841,
+          "objective": -1.8816711199292118
+        },
+        {
+          "architecture": "per_stock",
+          "start": "2024-09-20",
+          "end": "2024-12-20",
+          "net_return": -0.024733313150341774,
+          "sharpe": -1.7313380747997895,
+          "stress_net_return": -0.05397675956913606,
+          "objective": -3.1393680073616177
+        },
+        {
+          "architecture": "hybrid",
+          "start": "2024-09-20",
+          "end": "2024-12-20",
+          "net_return": 0.023336855068572415,
+          "sharpe": 0.3691446592773273,
+          "stress_net_return": -0.01177717484723051,
+          "objective": -0.971347806993373
+        }
+      ]
+    }
+  ],
+  "objective": "median inner-fold min(base,2x cost) Sharpe minus 2*absolute drawdown, minus 0.5 fold-score std; >=5 trades",
+  "search_design": "Shared candidate search across architectures; each architecture chooses its best candidate on inner folds only. Per-stock hyperparameters shared, weights fitted independently."
+}

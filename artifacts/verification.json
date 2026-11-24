@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "checks": [
+    "All processed input hashes match the pre-test selection lock.",
+    "All strategies have nonnegative cash and matching evaluation periods.",
+    "Trade-fee totals reconcile with portfolio fees.",
+    "Closed-trade P&L reconciles to final equity for fully liquidated portfolios.",
+    "Every buy signal precedes its fill; model/calibration label dates precede test.",
+    "Exactly 128 bounded candidate trials recorded across 16 searches.",
+    "Replay contains only the declared 2025 final period."
+  ],
+  "trials": 128
+}
