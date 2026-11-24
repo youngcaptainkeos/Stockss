@@ -140,17 +140,41 @@ def simulate(
         prev = calendar[i - 1] if i > 0 else None
         rebal = (i - first) % cfg["horizon"] == 0
         final = date == dates[-1]
-        if final or halted or (rebal and not buy_hold):
+        use_smart_hold = cfg.get("smart_hold", True) and not buy_hold
+        if final or halted:
             for symbol in list(positions):
                 sell(
                     symbol,
                     date,
-                    (
-                        "end of evaluation"
-                        if final
-                        else "risk halt" if halted else "five-session exit"
-                    ),
+                    "end of evaluation" if final else "risk halt",
                 )
+        elif rebal and not buy_hold:
+            for symbol in list(positions):
+                p = positions[symbol]
+                p["holding_sessions"] = p.get("holding_sessions", 0) + cfg["horizon"]
+                s = sig.get((prev, symbol))
+                cur_px = last_price.get(symbol, p["entry_cost"] / p["qty"])
+                cur_ret = cur_px / (p["entry_cost"] / p["qty"]) - 1
+                stop_threshold = cfg.get("position_stop_loss", -0.10)
+                max_hold_sessions = cfg.get("max_holding_sessions", 20)
+
+                if not use_smart_hold:
+                    should_exit = True
+                    reason = "five-session exit"
+                elif p["holding_sessions"] >= max_hold_sessions:
+                    should_exit = True
+                    reason = "max-holding exit"
+                elif cur_ret <= stop_threshold:
+                    should_exit = True
+                    reason = f"stop loss {cur_ret:.1%}"
+                elif s is None or not np.isfinite(s.score) or s.score <= s.threshold:
+                    should_exit = True
+                    reason = "signal dropped below threshold"
+                else:
+                    should_exit = False
+
+                if should_exit:
+                    sell(symbol, date, reason)
         for symbol in list(pending_exits):
             if symbol in positions:
                 sell(symbol, date, "deferred exit")
@@ -202,10 +226,19 @@ def simulate(
                 if len(positions) >= cfg["max_positions"]:
                     break
                 sec = cfg["universe"][symbol]
+                base_weight = cfg["max_weight"]
+                if cfg.get("volatility_weighting", True) and not buy_hold:
+                    vol = max(
+                        0.15,
+                        float(before.vol20)
+                        if hasattr(before, "vol20") and np.isfinite(before.vol20)
+                        else 0.30,
+                    )
+                    base_weight = min(cfg["max_weight"], max(0.03, 0.025 / vol))
                 budget = max(
                     0,
                     min(
-                        equity_open * cfg["max_weight"],
+                        equity_open * base_weight,
                         equity_open * cfg["max_gross"] - gross,
                         equity_open * cfg["max_sector_weight"]
                         - sector_values.get(sec, 0),

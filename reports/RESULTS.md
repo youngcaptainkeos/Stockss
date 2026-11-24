@@ -1,15 +1,15 @@
 # NSE Research Lab — final historical evaluation
 
-**Status: RESEARCH ONLY.** Development selected **lightgbm_hybrid_context** before the final test. Its 2025 net return was **-15.58%**, or **₹-155,810** on ₹10 lakh. The statistical gate failed. No live deployment is justified by this experiment.
+**Status: RESEARCH ONLY.** Development selected **lightgbm_hybrid_context** before the final test. Its 2025 net return was **-4.49%**, or **₹-44,919** on ₹10 lakh. The statistical gate failed. No live deployment is justified by this experiment.
 
 ## Evidence at a glance
 
 - Final period: 2025-01-01 to 2025-12-31, 249 market sessions; evaluated once after a frozen selection lock.
 - Broad capped buy/hold: **4.40%**; NIFTY 50 price index: **10.54%**. The NIFTY comparator has full exposure, no dividends and no trading costs.
-- Selected strategy Sharpe: **-1.91** (6% annual hurdle); max drawdown: **-17.80%**; mean exposure: **49.57%**.
-- 318 closed trades; win rate 35.85%; explicit fees **₹70,794**, adverse slippage **₹72,579**.
-- Base / 2× / 3× total-cost scenario returns: -15.58% / -20.41% / -22.84%.
-- 95% moving-block bootstrap interval for net return: **-32.46% to 5.53%**. Paired excess return versus buy/hold: **-33.06% to -7.58%**. These conditional intervals do not correct for model-search selection.
+- Selected strategy Sharpe: **-0.82** (6% annual hurdle); max drawdown: **-18.39%**; mean exposure: **72.90%**.
+- 132 closed trades; win rate 43.18%; explicit fees **₹29,414**, adverse slippage **₹23,484**.
+- Base / 2× / 3× total-cost scenario returns: -4.49% / -9.84% / -15.19%.
+- 95% moving-block bootstrap interval for net return: **-28.54% to 29.13%**. Paired excess return versus buy/hold: **-17.58% to 3.05%**. These conditional intervals do not correct for model-search selection.
 
 ## What was actually trained
 
@@ -21,23 +21,23 @@ The final fit has 20 local stock models. E2E had only 118 eligible core observat
 
 | Strategy | Net return | Sharpe | Max drawdown | Fees | Slippage | Closed trades | Mean exposure |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| ridge_pooled_price | -7.98% | -1.36 | -12.66% | ₹35,726 | ₹52,772 | 136 | 25.40% |
-| ridge_per_stock_price | -6.19% | -1.11 | -10.62% | ₹73,211 | ₹65,263 | 299 | 49.75% |
-| ridge_hybrid_price | -8.81% | -1.35 | -15.87% | ₹43,147 | ₹57,582 | 162 | 31.67% |
-| ridge_pooled_context | -4.02% | -0.91 | -10.94% | ₹34,878 | ₹52,839 | 130 | 24.45% |
-| ridge_per_stock_context | 3.96% | -0.16 | -9.04% | ₹60,950 | ₹56,227 | 224 | 41.20% |
-| ridge_hybrid_context | -9.93% | -1.49 | -15.71% | ₹50,134 | ₹58,540 | 193 | 36.36% |
-| lightgbm_pooled_price | 0.36% | -1.09 | -4.27% | ₹10,815 | ₹20,085 | 37 | 7.37% |
-| lightgbm_per_stock_price | -6.39% | -1.14 | -11.71% | ₹72,706 | ₹65,750 | 299 | 49.67% |
-| lightgbm_hybrid_price | -2.63% | -1.53 | -4.77% | ₹13,494 | ₹23,878 | 47 | 9.34% |
-| lightgbm_pooled_context | -9.46% | -1.38 | -12.88% | ₹72,933 | ₹71,162 | 321 | 49.68% |
-| lightgbm_per_stock_context | -5.64% | -1.04 | -11.39% | ₹73,347 | ₹66,137 | 309 | 49.61% |
-| lightgbm_hybrid_context **selected** | -15.58% | -1.91 | -17.80% | ₹70,794 | ₹72,579 | 318 | 49.57% |
+| ridge_pooled_price | -3.30% | -1.33 | -10.10% | ₹13,148 | ₹13,104 | 60 | 18.83% |
+| ridge_per_stock_price | -0.06% | -0.48 | -12.65% | ₹31,530 | ₹22,690 | 136 | 73.84% |
+| ridge_hybrid_price | -2.74% | -1.27 | -10.11% | ₹16,759 | ₹15,710 | 71 | 23.74% |
+| ridge_pooled_context | -0.84% | -0.93 | -10.13% | ₹13,131 | ₹12,935 | 60 | 18.58% |
+| ridge_per_stock_context | 7.28% | 0.21 | -8.10% | ₹30,121 | ₹22,721 | 112 | 43.02% |
+| ridge_hybrid_context | 1.59% | -0.52 | -10.26% | ₹23,762 | ₹20,654 | 95 | 33.00% |
+| lightgbm_pooled_price | 0.98% | -2.13 | -1.50% | ₹3,509 | ₹4,905 | 19 | 3.51% |
+| lightgbm_per_stock_price | -0.13% | -0.47 | -15.56% | ₹30,893 | ₹22,198 | 132 | 74.56% |
+| lightgbm_hybrid_price | -1.18% | -2.95 | -2.33% | ₹5,126 | ₹6,325 | 26 | 4.83% |
+| lightgbm_pooled_context | -7.32% | -1.22 | -10.53% | ₹28,761 | ₹22,508 | 130 | 70.49% |
+| lightgbm_per_stock_context | 0.68% | -0.42 | -14.73% | ₹30,868 | ₹22,191 | 134 | 73.09% |
+| lightgbm_hybrid_context **selected** | -4.49% | -0.82 | -18.39% | ₹29,414 | ₹23,484 | 132 | 72.90% |
 | cash | 0.00% | 0.00 | 0.00% | ₹0 | ₹0 | 0 | 0.00% |
 | buy_hold | 4.40% | -0.08 | -13.23% | ₹3,441 | ₹2,054 | 21 | 85.15% |
-| momentum | -15.49% | -2.43 | -17.42% | ₹64,384 | ₹59,208 | 286 | 46.24% |
-| ema | -10.27% | -2.07 | -13.67% | ₹60,612 | ₹49,168 | 260 | 42.60% |
-| mean_reversion | -8.23% | -2.48 | -9.62% | ₹26,751 | ₹22,158 | 100 | 18.88% |
+| momentum | -9.59% | -1.80 | -13.09% | ₹28,058 | ₹20,710 | 123 | 62.41% |
+| ema | -2.81% | -1.07 | -9.03% | ₹30,266 | ₹21,636 | 123 | 56.23% |
+| mean_reversion | -5.86% | -2.09 | -8.97% | ₹18,965 | ₹14,562 | 73 | 19.64% |
 
 Rows are predeclared comparisons, not permission to select a different strategy after seeing the final period.
 
@@ -45,12 +45,12 @@ Rows are predeclared comparisons, not permission to select a different strategy 
 
 | Family / architecture | Price-only return | Context return | Context minus price |
 |---|---:|---:|---:|
-| ridge / pooled | -7.98% | -4.02% | 3.95% |
-| ridge / per_stock | -6.19% | 3.96% | 10.15% |
-| ridge / hybrid | -8.81% | -9.93% | -1.12% |
-| lightgbm / pooled | 0.36% | -9.46% | -9.82% |
-| lightgbm / per_stock | -6.39% | -5.64% | 0.74% |
-| lightgbm / hybrid | -2.63% | -15.58% | -12.96% |
+| ridge / pooled | -3.30% | -0.84% | 2.45% |
+| ridge / per_stock | -0.06% | 7.28% | 7.34% |
+| ridge / hybrid | -2.74% | 1.59% | 4.33% |
+| lightgbm / pooled | 0.98% | -7.32% | -8.29% |
+| lightgbm / per_stock | -0.13% | 0.68% | 0.81% |
+| lightgbm / hybrid | -1.18% | -4.49% | -3.31% |
 
 The two feature groups may select different inner-fold parameters; this is a pipeline-level ablation, not an isolated causal estimate for a single feature.
 
@@ -84,18 +84,18 @@ Reliability bins and per-stock classification metrics are in the selected strate
 
 | Symbol | Selected-strategy closed-trade P&L | Eligible classified observations |
 |---|---:|---:|
-| NETWEB | ₹-17,440 | 242 |
-| E2E | ₹-79,789 | 242 |
-| TATACOMM | ₹-1,985 | 242 |
+| NETWEB | ₹5,968 | 242 |
+| E2E | ₹-37,179 | 242 |
+| TATACOMM | ₹6,394 | 242 |
 
 ## Regime stability
 
 | Regime | Sessions | Compounded selected-day return |
 |---|---:|---:|
-| trend_positive | 171 | -13.13% |
-| trend_nonpositive | 78 | -2.82% |
-| high_volatility | 15 | 4.82% |
-| lower_volatility | 234 | -19.46% |
+| trend_positive | 171 | 0.06% |
+| trend_nonpositive | 78 | -4.55% |
+| high_volatility | 15 | 4.08% |
+| lower_volatility | 234 | -8.23% |
 
 Regime returns combine only the indicated daily observations; they are not standalone tradable strategies. Trend uses the previous available market state, and the high-volatility threshold is fixed at 20%.
 

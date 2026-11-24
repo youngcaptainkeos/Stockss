@@ -30,7 +30,8 @@ class IndiaDeliveryCosts:
                     "total",
                 ]
             }
-        broker = min(0.025 * turnover, max(5.0, min(20.0, 0.001 * turnover)))
+        # Groww delivery brokerage: ₹20 or 0.1% whichever is lower (capped at SEBI 2.5% max limit)
+        broker = min(0.025 * turnover, min(20.0, 0.001 * turnover))
         dp = (20.0 if turnover >= 100 else 3.5) if side == "SELL" else 0.0
         out = {
             "brokerage": broker,

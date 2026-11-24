@@ -79,7 +79,7 @@ def test_fee_components_match_schedule():
     assert s["dp"] == 20 and s["stamp"] == 0
     assert b["gst"] == pytest.approx(0.18 * (20 + 3.07 + 0.1 + 0.1))
     assert f.components(100000, "SELL", 2)["total"] == 2 * s["total"]
-    assert f.components(100, "BUY")["brokerage"] == 2.5
+    assert f.components(100, "BUY")["brokerage"] == pytest.approx(0.1)
 
 
 def test_next_open_cash_constraints_and_settlement():

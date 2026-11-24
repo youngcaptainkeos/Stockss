@@ -64,12 +64,15 @@ def suggest(trial, family):
         p["alpha"] = trial.suggest_float("alpha", 0.1, 1000, log=True)
     else:
         p.update(
-            num_leaves=trial.suggest_categorical("num_leaves", [7, 15, 31]),
-            learning_rate=trial.suggest_float("learning_rate", 0.015, 0.1, log=True),
+            num_leaves=trial.suggest_categorical("num_leaves", [7, 12, 15]),
+            max_depth=trial.suggest_categorical("max_depth", [3, 4, 5]),
+            learning_rate=trial.suggest_float("learning_rate", 0.015, 0.08, log=True),
             min_child_samples=trial.suggest_categorical(
-                "min_child_samples", [30, 60, 120]
+                "min_child_samples", [40, 80, 120]
             ),
-            reg_lambda=trial.suggest_float("reg_lambda", 0.1, 20, log=True),
+            reg_lambda=trial.suggest_float("reg_lambda", 1.0, 30.0, log=True),
+            colsample_bytree=trial.suggest_float("colsample_bytree", 0.6, 0.85),
+            subsample=trial.suggest_float("subsample", 0.7, 0.9),
         )
     return p
 

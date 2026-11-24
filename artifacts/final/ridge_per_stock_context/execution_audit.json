@@ -1,15 +1,4 @@
 {
-  "rejects": [
-    {
-      "date": "2025-09-08",
-      "symbol": "M&M",
-      "reason": "exit deferred: missing or locked bar"
-    },
-    {
-      "date": "2025-09-08",
-      "symbol": "M&M",
-      "reason": "exit deferred: missing or locked bar"
-    }
-  ],
+  "rejects": [],
   "open_positions": {}
 }
