@@ -103,4 +103,6 @@ The fixed universe is survivor-selected. Corporate-action completeness and execu
 
 The original snapshot, immutable hashes, seed, complete trial logs, selected parameters, fitted models, split dates, accounting ledgers and pinned runtime dependencies are retained locally. `requirements.lock` is generated from the versions used for this run. Source snapshots are not published or sent elsewhere. The optional source endpoint may change or restrict access; cached data supports offline reruns and inspection.
 
+In this run, the final fit contains 20 local stock models. E2E had 118 eligible core observations, below the fixed 126-row minimum, so the per-stock architecture abstains on E2E and the hybrid uses its pooled prediction. NETWEB had 176 eligible core observations and a local model.
+
 The final test is not a promise of future performance. The selected model stays selected even if another candidate looks better in 2025; do not optimize retrospectively against the final comparison table.

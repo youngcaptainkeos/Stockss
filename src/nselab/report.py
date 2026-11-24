@@ -74,6 +74,7 @@ def generate_report():
         "Twelve ML candidates compare ridge versus LightGBM, pooled versus independent per-stock versus history-weighted hybrid, "
         "and price/volume versus additional Indian market/sector features. The complete configuration and objective were specified before test access in PROTOCOL.md.",
         "",
+        "The final fit has 20 local stock models. E2E had only 118 eligible core observations against the fixed 126-observation minimum; its per-stock model abstained and the hybrid used the pooled model. NETWEB had 176 eligible core observations. "
         "Per-stock modelling is implemented: each eligible symbol has separately fitted coefficients/trees and selected features. "
         "Hyperparameters are shared within each architecture/family/feature group; they are not independently optimized for every stock. "
         "Sparse local histories abstain; the hybrid falls back to pooled predictions. There is no global-optimum or future-profit guarantee.",
